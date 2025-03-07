@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опросник с диаграммой</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+    {
+        "imports": {
+            "chart.js": "https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div id="welcome-screen" class="screen active">
+            <h1>Опросник</h1>
+            <p>Вас ждут 5 разделов по 7 вопросов в каждом. Оцените каждый вопрос по шкале от -5 до 5.</p>
+            <button id="start-button">Начать опрос</button>
+            <button id="admin-button">Администрирование</button>
+        </div>
+
+        <div id="quiz-screen" class="screen">
+            <div id="progress-bar-container">
+                <div id="progress-bar"></div>
+            </div>
+            <h2 id="section-title"></h2>
+            <div id="question-container">
+                <p id="question-text"></p>
+                <div class="rating-container">
+                    <span class="rating-label">-5</span>
+                    <div class="rating">
+                        <input type="range" id="rating-slider" min="-5" max="5" value="0" step="1">
+                        <div class="rating-value" id="rating-value">0</div>
+                    </div>
+                    <span class="rating-label">5</span>
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="prev-button" disabled>Назад</button>
+                <button id="next-button">Далее</button>
+            </div>
+        </div>
+
+        <div id="results-screen" class="screen">
+            <h2>Результаты</h2>
+            <div class="chart-container">
+                <canvas id="results-chart"></canvas>
+            </div>
+            <p>Ваши результаты: <span id="final-score">0</span></p>
+            <button id="restart-button">Пройти снова</button>
+        </div>
+
+        <div id="admin-screen" class="screen">
+            <h1>Администрирование</h1>
+            <div id="admin-sections">
+                <!-- Sections will be loaded here -->
+            </div>
+            <div class="buttons">
+                <button id="save-admin">Сохранить</button>
+                <button id="back-admin">Назад</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="quiz.js" type="module"></script>
+</body>
+</html>
