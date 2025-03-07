@@ -144,12 +144,67 @@ button:disabled {
 
 .chart-container {
     width: 100%;
-    max-height: 500px;
-    margin: 30px 0;
+    height: 600px;
+    margin: 30px auto;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow: visible;
 }
 
 #results-screen {
     text-align: center;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#results-screen h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: bold;
+}
+
+#results-screen p {
+    font-size: 18px;
+    margin: 25px 0;
+    color: #555;
+}
+
+#final-score {
+    font-weight: bold;
+    font-size: 22px;
+    color: #3498db;
+}
+
+#restart-button {
+    margin-top: 20px;
+    background-color: #2ecc71;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 15px 30px;
+}
+
+#restart-button:hover {
+    background-color: #27ae60;
+}
+
+.chart-label {
+    position: absolute;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    pointer-events: none;
+    z-index: 10;
+    transition: all 0.3s ease;
 }
 
 /* Admin styles */
@@ -194,5 +249,20 @@ button:disabled {
     border-radius: 4px;
     resize: vertical;
     min-height: 60px;
+}
+
+/* Стили для мобильных устройств */
+@media (max-width: 768px) {
+    .chart-container {
+        height: 400px;
+    }
+    
+    .chart-label {
+        font-size: 12px;
+    }
+    
+    #results-screen {
+        padding: 15px;
+    }
 }
 
